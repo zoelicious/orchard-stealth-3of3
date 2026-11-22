@@ -1,0 +1,41 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #0a0d08; height: 100%; }
+body { display: flex; align-items: center; justify-content: center; font-family: "Trebuchet MS", Verdana, sans-serif; color: #e8e4d2; }
+#wrap { position: relative; width: 1280px; height: 720px; overflow: hidden; background: #141a12; box-shadow: 0 0 60px #000; }
+#game { display: block; width: 1280px; height: 720px; }
+
+#topbar { position: absolute; left: 0; top: 0; width: 980px; height: 46px; display: flex; align-items: center; gap: 18px; padding: 0 16px; background: linear-gradient(90deg, rgba(8,12,7,.92), rgba(8,12,7,.55) 80%, rgba(8,12,7,0)); font-size: 14px; letter-spacing: .04em; }
+.brand { font-weight: 900; color: #ffc95e; letter-spacing: .12em; font-size: 17px; text-shadow: 0 0 12px rgba(255,180,60,.6); }
+.topitem b { color: #fff; }
+.topitem.ghost b { color: #9fe870; }
+#timer { font-size: 20px; color: #ffd97a; }
+#strikes { color: #ff6b5e; letter-spacing: .2em; }
+
+#banner { position: absolute; left: 490px; top: 84px; transform: translateX(-50%); padding: 10px 26px; background: rgba(60,10,6,.88); border: 2px solid #ff8a5c; color: #ffd9a0; font-weight: 900; font-size: 22px; letter-spacing: .14em; border-radius: 6px; text-shadow: 0 2px 0 #000; box-shadow: 0 0 30px rgba(255,120,40,.45); }
+#objective { position: absolute; left: 16px; bottom: 12px; font-size: 13px; color: #cfe3b0; background: rgba(8,12,7,.72); padding: 7px 12px; border-radius: 5px; border: 1px solid rgba(160,200,120,.35); }
+
+#panel { position: absolute; right: 0; top: 0; width: 300px; height: 720px; padding: 12px 14px; background: rgba(9,13,8,.88); border-left: 1px solid rgba(255,200,90,.25); font-size: 13px; overflow: hidden; }
+#panel h2 { font-size: 15px; letter-spacing: .18em; color: #ffc95e; margin-bottom: 10px; border-bottom: 1px solid rgba(255,200,90,.35); padding-bottom: 6px; }
+#panel .row { display: flex; justify-content: space-between; align-items: baseline; padding: 3px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
+#panel .row span { color: #a9b89a; letter-spacing: .06em; font-size: 12px; }
+#panel .row b { font-size: 14px; }
+#panel .ok { color: #9fe870; }
+#panel .warn { color: #ffc95e; }
+#panel .bad { color: #ff6b5e; }
+#alarmbar { position: relative; height: 12px; background: #1c2416; border: 1px solid #4a5a3a; border-radius: 3px; margin-top: 6px; overflow: hidden; }
+#alarmfill { height: 100%; width: 0%; background: linear-gradient(90deg, #7ec850, #ffc95e 55%, #ff5a3c); transition: width .15s linear; }
+#alarmbar i { position: absolute; top: 0; bottom: 0; width: 1px; background: rgba(255,255,255,.35); }
+#alarmbar i:nth-child(2) { left: 35%; } #alarmbar i:nth-child(3) { left: 55%; } #alarmbar i:nth-child(4) { left: 75%; }
+.alarmticks { display: flex; justify-content: space-between; font-size: 9px; color: #8a9a7a; letter-spacing: .05em; margin: 2px 0 6px; }
+.goal, .roster, .legend, .controls { margin-top: 7px; }
+.goal b, .roster b, .legend b, .controls b { color: #ffc95e; letter-spacing: .12em; font-size: 12px; }
+.goal p, .legend p, .controls p { color: #c9d4b8; font-size: 12px; line-height: 1.45; margin-top: 3px; }
+#minimap { display: block; width: 264px; height: 96px; margin-top: 7px; border: 1px solid rgba(255,200,90,.35); border-radius: 4px; background: #10160e; }
+#throwBtn { width: 100%; margin-top: 8px; padding: 7px 0; background: #7a4a12; color: #ffe6b0; border: 1px solid #ffc95e; border-radius: 5px; font-weight: 800; letter-spacing: .08em; cursor: pointer; font-family: inherit; font-size: 13px; }
+#throwBtn:hover { background: #96601a; }
+
+#endcard { position: absolute; left: 340px; top: 220px; width: 420px; padding: 26px 30px; background: rgba(8,14,7,.94); border: 2px solid #9fe870; border-radius: 10px; text-align: center; box-shadow: 0 0 50px rgba(120,220,90,.35); }
+#endcard h2 { color: #9fe870; font-size: 30px; letter-spacing: .1em; margin-bottom: 10px; }
+#endcard p { color: #dfe8cf; line-height: 1.5; }
+#endcard .hint { margin-top: 12px; font-size: 12px; color: #9aa98a; }
+.hidden { display: none !important; }

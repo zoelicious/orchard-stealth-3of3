@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Orchard at Dusk — a stealth game</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="wrap">
+  <canvas id="game" width="1280" height="720"></canvas>
+
+  <div id="topbar">
+    <div class="brand">ORCHARD AT DUSK</div>
+    <div class="topitem">Level <b>1 of 3</b></div>
+    <div class="topitem">Night <b>1</b></div>
+    <div class="topitem">Time <b id="timer">3:00</b></div>
+    <div class="topitem">Strikes <b id="strikes">● ● ●</b></div>
+    <div class="topitem ghost">Ghost bonus <b>+500 if unseen</b></div>
+    <div class="topitem">Score <b id="score">0</b></div>
+  </div>
+
+  <div id="banner" class="hidden">WHAT WAS THAT?</div>
+  <div id="objective">Fill 3 baskets from the marked trees, then slip out through the green gate.</div>
+
+  <aside id="panel">
+    <h2>FIELD REPORT</h2>
+    <div class="row"><span>DETECTION</span><b id="detection" class="ok">CALM</b></div>
+    <div class="row"><span>ALARM</span><b id="alarmWord">CALM</b></div>
+    <div id="alarmbar"><div id="alarmfill"></div><i></i><i></i><i></i></div>
+    <div class="alarmticks"><span>CALM</span><span>UNEASY</span><span>HUNTED</span><span>ALARM</span></div>
+    <div class="row"><span>VISIBILITY</span><b id="visibility">IN SHADOW</b></div>
+    <div class="row"><span>NOISE</span><b id="noise">SILENT</b></div>
+    <div class="row"><span>BASKETS</span><b id="baskets">0 / 3</b></div>
+    <div class="row"><span>SPOTTED</span><b id="spotted">0</b></div>
+    <div class="row"><span>FALLEN FRUIT</span><b id="fruitLeft">x 3</b></div>
+    <div class="goal"><b>GOAL</b><p>Pick fruit from 3 marked trees. Avoid Farmer Aldous and Dog Bramble. Leave through the green gate before the round ends.</p></div>
+    <div class="roster"><b>PATROL ROSTER</b>
+      <div class="row"><span>Farmer Aldous</span><b id="rFarmer">Patrolling — 18m</b></div>
+      <div class="row"><span>Dog Bramble</span><b id="rDog">Patrolling — 24m</b></div>
+    </div>
+    <canvas id="minimap" width="264" height="96"></canvas>
+    <div class="legend"><b>LEGEND</b>
+      <p>TREE ROW: cover &nbsp;·&nbsp; LANTERN: danger, lit ground</p>
+      <p>TALL GRASS: hide (crouch) &nbsp;·&nbsp; HAYSTACK: cover</p>
+      <p>CRATE: cover &nbsp;·&nbsp; FIREFLY: safe shadow path</p>
+      <p>FALLEN FRUIT: distracts the dog &nbsp;·&nbsp; EXIT: green gate</p>
+    </div>
+    <div class="controls"><b>CONTROLS</b>
+      <p>WASD / Arrows — Move &nbsp;·&nbsp; C / Shift — Crouch</p>
+      <p>E (hold) — Pick fruit &nbsp;·&nbsp; Click tree — Shake branch</p>
+      <p>F — Throw fallen fruit &nbsp;·&nbsp; M — Mute &nbsp;·&nbsp; R — Restart</p>
+    </div>
+    <button id="throwBtn">THROW FALLEN FRUIT (F)</button>
+  </aside>
+
+  <div id="endcard" class="hidden">
+    <h2 id="endTitle">ESCAPED!</h2>
+    <p id="endText"></p>
+    <p class="hint">Press R to play again</p>
+  </div>
+</div>
+<script src="src/audio.js"></script>
+<script src="src/level.js"></script>
+<script src="src/vision.js"></script>
+<script src="src/player.js"></script>
+<script src="src/guard.js"></script>
+<script src="src/hud.js"></script>
+<script src="src/shots.js"></script>
+<script src="src/main.js"></script>
+</body>
+</html>
