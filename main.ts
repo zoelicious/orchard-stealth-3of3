@@ -4,12 +4,16 @@
 // Node 22. The output directory is /output, or MAKEFUN_OUTPUT_DIR outside
 // the grader. Both runs must write the same bytes, so the output directory is
 // emptied entry by entry (never removed as a whole) before the copy.
+// repoRoot is derived from import.meta.url, NOT from the working directory:
+// the grader runs `node /bot/main.ts` from an arbitrary working directory,
+// so any cwd-relative path would miss the game/ and screenshots/ trees.
 
 import { buildDossier } from "./vendor/makefun-game.ts";
 import { cpSync, existsSync, mkdirSync, readdirSync, rmSync, statSync, writeFileSync } from "node:fs";
-import { join } from "node:path";
+import { dirname, join, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 
-const repoRoot = process.cwd();
+const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)));
 const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
 
 function emptyDir(dir: string): void {
